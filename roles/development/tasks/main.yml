@@ -9,6 +9,10 @@
 - name: install zsh
   yum: pkg=zsh state=present
 
-- include: editors.yml
+- include: emacs.yml
+
 - { include: dotfiles.yml, home: /home/keelerm/, user: keelerm }
+- { include: vim.yml, home: /home/keelerm/, user: keelerm }
+
 - { include: dotfiles.yml, home: /root, user: root }
+- { include: vim.yml, home: /root/, user: root }

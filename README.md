@@ -5,17 +5,19 @@ various servers that I work on.
 
 ## Setup
 
-In order to use this repository, you can first must have ansible installed.
+In order to use this repository, you can first must have ansible
+installed.
 
     yum install -y python-pip gcc python-devel git
     pip install ansible
 
-Once this is installed, you can install the third-party ansible roles using
+Once this is installed, you can install the third-party ansible roles
+using
 
     ansible-galaxy install -r requirements.txt
 
 ## Provisioning
 
-Provisioning the servers is as easy as:
+Provisioning all of the servers at once is as simple as:
 
-    ansible-playbook server-configuration.yml
+    ansible-playbook servers.yml
