@@ -1,0 +1,7 @@
+---
+# tasks file for account-management
+- name: create keelerm account
+  user: name=keelerm comment="Matthew M. Keeler" shell=/usr/bin/zsh group=keelerm groups=wheel
+
+- name: set root zsh
+  user: name=root shell=/usr/bin/zsh
