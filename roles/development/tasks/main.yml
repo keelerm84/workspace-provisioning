@@ -1,0 +1,14 @@
+---
+# tasks file for cli-tools
+- name: install git
+  yum: pkg=git state=present
+
+- name: install tmux
+  yum: pkg=tmux state=present
+
+- name: install zsh
+  yum: pkg=zsh state=present
+
+- include: editors.yml
+- { include: dotfiles.yml, home: /home/keelerm/, user: keelerm }
+- { include: dotfiles.yml, home: /root, user: root }

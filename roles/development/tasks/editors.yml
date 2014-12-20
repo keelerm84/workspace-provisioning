@@ -1,0 +1,5 @@
+- name: install vim
+  yum: pkg=vim-enhanced state=present
+
+- name: install emacs
+  yum: pkg=emacs state=present
