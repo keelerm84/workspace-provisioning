@@ -3,4 +3,4 @@
 
   roles:
     - account-management
-    - development
+    - cli-tools
