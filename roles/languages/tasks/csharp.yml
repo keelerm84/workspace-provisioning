@@ -13,3 +13,6 @@
 - name: install gtk-sharp-devel
   yum: name=gtk-sharp2-devel state=present
 
+- name: install mono-develop
+  yum: name=monodevelop state=present
+
