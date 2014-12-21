@@ -1,2 +1,22 @@
 - name: install emacs
   yum: pkg=emacs state=present
+
+- name: install global
+  yum: pkg=global state=present
+
+- name: install cask for {{user}}
+  shell: curl -fsSkL https://raw.github.com/cask/cask/master/go | python
+  args:
+    creates: "{{home}}/.cask"
+  sudo_user: "{{user}}"
+  sudo: yes
+
+- name: install emacs configuration for {{user}}
+  git: repo=git://github.com/keelerm84/.emacs.d dest={{home}}/.emacs.d update=yes
+  sudo_user: "{{user}}"
+  sudo: yes
+
+- name: install emacs dependencies for {{user}}
+  command: "{{home}}/.cask/bin/cask install chdir={{home}}/.emacs.d"
+  sudo_user: "{{user}}"
+  sudo: yes
