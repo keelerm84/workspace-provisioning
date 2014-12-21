@@ -17,3 +17,4 @@
     - ruby
 
 - include: csharp.yml
+- include: clojure.yml

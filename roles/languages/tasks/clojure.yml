@@ -1,0 +1,15 @@
+- name: create /home/keelerm/bin directory
+  file: path=/home/keelerm/bin owner=keelerm group=keelerm mode=700 state=directory
+
+- name: fetch leiningen installation script
+  command: wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein chdir=/home/keelerm/bin/
+  sudo_user: keelerm
+  sudo: yes
+
+- name: set installation script as executable
+  file: path=/home/keelerm/bin/lein mode=700
+
+- name: install leiningen
+  command: /home/keelerm/bin/lein
+  sudo_user: keelerm
+  sudo: yes
