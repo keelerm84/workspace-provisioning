@@ -1,25 +1,25 @@
 - name: install vim
   yum: name=vim-enhanced state=present
 
-- name: create .vim/bundle directory for {{user}}
-  file: path={{home}}/.vim/bundle owner={{user}} group={{user}} state=directory
-  sudo_user: "{{user}}"
+- name: create .vim/bundle directory for {{ user }}
+  file: path={{ home }}/.vim/bundle owner={{ user }} group={{ user }} state=directory
+  sudo_user: "{{ user }}"
   sudo: yes
 
-- name: install vundle for {{user}}
-  git: repo=git://github.com/gmarik/Vundle.vim dest={{home}}/.vim/bundle/vundle
-  sudo_user: "{{user}}"
+- name: install vundle for {{ user }}
+  git: repo=git://github.com/gmarik/Vundle.vim dest={{ home }}/.vim/bundle/vundle
+  sudo_user: "{{ user }}"
   sudo: yes
 
-- name: copy over vim installation file for {{user}}
-  copy: src=bundle-install.vimrc dest={{home}}/bundle-install.vimrc owner={{user}} group={{user}}
-  sudo_user: "{{user}}"
+- name: copy over vim installation file for {{ user }}
+  copy: src=bundle-install.vimrc dest={{ home }}/bundle-install.vimrc owner={{ user }} group={{ user }}
+  sudo_user: "{{ user }}"
   sudo: yes
 
-- name: install vim bundles for {{user}}
-  command: vim -u {{home}}/bundle-install.vimrc +BundleInstall! +qall
-  sudo_user: "{{user}}"
+- name: install vim bundles for {{ user }}
+  command: vim -u {{ home }}/bundle-install.vimrc +BundleInstall! +qall
+  sudo_user: "{{ user }}"
   sudo: yes
 
-- name: remove vim installation file for {{user}}
-  file: path="{{home}}/bundle-install.vimrc" state=absent
+- name: remove vim installation file for {{ user }}
+  file: path="{{ home }}/bundle-install.vimrc" state=absent

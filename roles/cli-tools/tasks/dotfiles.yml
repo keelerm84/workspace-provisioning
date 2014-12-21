@@ -1,14 +1,14 @@
-- name: install homeshick for {{user}}
-  git: repo=git://github.com/andsens/homeshick.git dest={{home}}/.homesick/repos/homeshick accept_hostkey=yes
-  sudo_user: "{{user}}"
+- name: install homeshick for {{ user }}
+  git: repo=git://github.com/andsens/homeshick.git dest={{ home }}/.homesick/repos/homeshick accept_hostkey=yes
+  sudo_user: "{{ user }}"
   sudo: yes
 
-- name: install dotfiles for {{user}}
-  git: repo=git://github.com/keelerm84/dotfiles.git dest={{home}}/.homesick/repos/dotfiles accept_hostkey=yes
-  sudo_user: "{{user}}"
+- name: install dotfiles for {{ user }}
+  git: repo=git://github.com/keelerm84/dotfiles.git dest={{ home }}/.homesick/repos/dotfiles accept_hostkey=yes
+  sudo_user: "{{ user }}"
   sudo: yes
 
-- name: link out dotfiles for {{user}}
-  command: "{{home}}/.homesick/repos/homeshick/bin/homeshick link dotfiles -f -q"
-  sudo_user: "{{user}}"
+- name: link out dotfiles for {{ user }}
+  command: "{{ home }}/.homesick/repos/homeshick/bin/homeshick link dotfiles -f -q"
+  sudo_user: "{{ user }}"
   sudo: yes
