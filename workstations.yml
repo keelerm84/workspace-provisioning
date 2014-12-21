@@ -2,5 +2,6 @@
 - hosts: workstations
 
   roles:
-    - account-management
-    - cli-tools
+    - { role: account-management, tags: ['account'] }
+    - { role: cli-tools, tags: ['cli'] }
+    - { role: languages, tags: ['languages'] }

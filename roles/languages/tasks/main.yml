@@ -1,0 +1,19 @@
+---
+# tasks file for languages
+- name: create directories to store all projects
+  file: path=/home/keelerm/Projects/{{ item }} owner=keelerm group=keelerm mode=700 recurse=yes state=directory
+  with_items:
+    - android
+    - c
+    - clojure
+    - csharp
+    - elisp
+    - golang
+    - java
+    - latex
+    - nodejs
+    - php
+    - python
+    - ruby
+
+- include: csharp.yml
