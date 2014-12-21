@@ -1,13 +1,13 @@
 ---
 # tasks file for cli-tools
 - name: install git
-  yum: pkg=git state=present
+  yum: name=git state=present
 
 - name: install tmux
-  yum: pkg=tmux state=present
+  yum: name=tmux state=present
 
 - name: install zsh
-  yum: pkg=zsh state=present
+  yum: name=zsh state=present
 
 - { include: emacs.yml, home: /home/keelerm/, user: keelerm }
 - { include: emacs.yml, home: /root/, user: root }

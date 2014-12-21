@@ -1,8 +1,8 @@
 - name: install emacs
-  yum: pkg=emacs state=present
+  yum: name=emacs state=present
 
 - name: install global
-  yum: pkg=global state=present
+  yum: name=global state=present
 
 - name: install cask for {{user}}
   shell: curl -fsSkL https://raw.github.com/cask/cask/master/go | python
