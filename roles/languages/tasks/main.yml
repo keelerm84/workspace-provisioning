@@ -18,3 +18,4 @@
 
 - include: csharp.yml
 - include: clojure.yml
+- include: latex.yml
