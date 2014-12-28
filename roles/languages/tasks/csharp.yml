@@ -10,9 +10,9 @@
 - name: install xsp for ASP.NET support
   yum: name=xsp state=present
 
-- name: install gtk-sharp-devel
-  yum: name=gtk-sharp2-devel state=present
-
 - name: install mono-develop
   yum: name=monodevelop state=present
+
+- name: create registry directory
+  file: path=/etc/mono/registry owner=root group=root mode=777 state=directory
 
