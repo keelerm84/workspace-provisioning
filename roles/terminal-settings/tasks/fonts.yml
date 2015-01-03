@@ -1,11 +1,11 @@
-- name: download powerline fonts
-  git: repo=https://github.com/powerline/fonts dest=~/.powerline-fonts update=yes
-  sudo_user: keelerm
+- name: download powerline fonts for {{ user }}
+  git: repo=https://github.com/powerline/fonts dest={{ home }}/.powerline-fonts update=yes
+  sudo_user: "{{ user }}"
   sudo: yes
 
-- name: install powerline fonts
+- name: install powerline fonts for {{ user }}
   command: ./install.sh
   args:
-      chdir: ~/.powerline-fonts
-  sudo_user: keelerm
+      chdir: "{{ home }}/.powerline-fonts"
+  sudo_user: "{{ user }}"
   sudo: yes
