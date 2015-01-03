@@ -1,0 +1,3 @@
+---
+- include: fonts.yml
+- include: gnome-terminal.yml

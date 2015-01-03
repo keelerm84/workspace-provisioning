@@ -1,0 +1,41 @@
+- name: find profile id
+  shell: gsettings get org.gnome.Terminal.ProfilesList list | cut -c 3-38
+  register: profile
+  sudo_user: keelerm
+  sudo: yes
+
+- name: set profile name
+  command: dconf write /org/gnome/terminal/legacy/profiles:/:{{ profile.stdout }}/visible-name "'Default'"
+  sudo_user: keelerm
+  sudo: yes
+
+
+- name: turn off system font
+  command: dconf write /org/gnome/terminal/legacy/profiles:/:{{ profile.stdout }}/use-system-font 'false'
+  sudo_user: keelerm
+  sudo: yes
+
+- name: enable preferred font
+  command: dconf write /org/gnome/terminal/legacy/profiles:/:{{ profile.stdout }}/font "'Meslo LG M for Powerline 11'"
+  sudo_user: keelerm
+  sudo: yes
+
+- name: disable audible bell
+  command: dconf write /org/gnome/terminal/legacy/profiles:/:{{ profile.stdout }}/audible-bell "false"
+  sudo_user: keelerm
+  sudo: yes
+
+- name: enable unlimited scrollback
+  command: dconf write /org/gnome/terminal/legacy/profiles:/:{{ profile.stdout }}/scrollback-unlimited "true"
+  sudo_user: keelerm
+  sudo: yes
+
+- name: new terminals should open in tabs
+  command: dconf write /org/gnome/terminal/legacy/new-terminal-mode "'tab'"
+  sudo_user: keelerm
+  sudo: yes
+
+- name: hide menubar by default
+  command: dconf write /org/gnome/terminal/legacy/default-show-menubar "false"
+  sudo_user: keelerm
+  sudo: yes

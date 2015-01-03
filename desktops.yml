@@ -1,0 +1,4 @@
+---
+- hosts: desktops
+  roles:
+    - { role: terminal-settings, tags: ['terminal'] }

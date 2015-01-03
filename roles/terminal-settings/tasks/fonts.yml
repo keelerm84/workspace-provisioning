@@ -1,0 +1,11 @@
+- name: download powerline fonts
+  git: repo=https://github.com/powerline/fonts dest=~/.powerline-fonts update=yes
+  sudo_user: keelerm
+  sudo: yes
+
+- name: install powerline fonts
+  command: ./install.sh
+  args:
+      chdir: ~/.powerline-fonts
+  sudo_user: keelerm
+  sudo: yes
