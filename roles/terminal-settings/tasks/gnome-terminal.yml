@@ -9,7 +9,6 @@
   sudo_user: keelerm
   sudo: yes
 
-
 - name: turn off system font
   command: dconf write /org/gnome/terminal/legacy/profiles:/:{{ profile.stdout }}/use-system-font 'false'
   sudo_user: keelerm
