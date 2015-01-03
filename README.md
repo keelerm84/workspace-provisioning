@@ -20,4 +20,4 @@ using
 
 Provisioning all of the servers at once is as simple as:
 
-    ansible-playbook servers.yml
+    ansible-playbook servers.yml --ask-vault-pass

@@ -1,0 +1,26 @@
+- include_vars: keys.yml
+
+- name: create .ssh directory
+  file: path={{ home }}/.ssh owner={{ user }} group={{ user }} mode=700 state=directory
+  sudo_user: "{{ user }}"
+  sudo: yes
+
+- name: install ssh public key for {{ user }}
+  shell: echo "{{ id_rsa_pub }}" > {{ home }}/.ssh/id_rsa.pub
+  sudo_user: "{{ user }}"
+  sudo: yes
+
+- name: install ssh private key for {{ user }}
+  shell: echo "{{ id_rsa }}" > {{ home }}/.ssh/id_rsa
+  sudo_user: "{{ user }}"
+  sudo: yes
+
+- name: set permissions for id_rsa.pub for {{ user }}
+  file: path={{ home }}/.ssh/id_rsa.pub owner={{ user }} group={{ user }} mode=644
+  sudo_user: "{{ user }}"
+  sudo: yes
+
+- name: set permissions for id_rsa for {{ user }}
+  file: path={{ home }}/.ssh/id_rsa owner={{ user }} group={{ user }} mode=600
+  sudo_user: "{{ user }}"
+  sudo: yes
