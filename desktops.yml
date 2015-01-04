@@ -2,3 +2,4 @@
 - hosts: desktops
   roles:
     - { role: terminal-settings, tags: ['terminal'] }
+    - { role: desktop-apps, tags: ['desktop-apps'] }

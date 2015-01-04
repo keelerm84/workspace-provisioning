@@ -1,0 +1,11 @@
+---
+# tasks file for desktop-apps
+- include: google-chrome.yml
+
+- name: install various desktop applications
+  yum: name={{ item }} state=present
+  with_items:
+    - gimp
+    - inkscape
+    - dia
+    - pencil
