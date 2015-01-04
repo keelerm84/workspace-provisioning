@@ -1,6 +1,7 @@
 ---
 # tasks file for desktop-apps
 - include: google-chrome.yml
+- include: fonts.yml
 
 - name: install various desktop applications
   yum: name={{ item }} state=present
@@ -9,3 +10,4 @@
     - inkscape
     - dia
     - pencil
+    - gnome-tweak-tool
