@@ -12,7 +12,7 @@
   sudo: yes
 
 - name: install emacs configuration for {{ user }}
-  git: repo=git://github.com/keelerm84/.emacs.d dest={{ home }}/.emacs.d update=yes
+  git: repo=git://github.com/keelerm84/.emacs.d dest={{ home }}/.emacs.d update=yes accept_hostkey=True
   sudo_user: "{{ user }}"
   sudo: yes
 
