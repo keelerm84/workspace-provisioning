@@ -1,8 +1,12 @@
+- name: check if leiningen is installed
+  stat: path=/home/keelerm/bin/lein
+  register: st
 
 - name: fetch leiningen installation script
   command: wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein chdir=/home/keelerm/bin/
   sudo_user: keelerm
   sudo: yes
+  when: not st.stat.exists
 
 - name: set installation script as executable
   file: path=/home/keelerm/bin/lein mode=700
