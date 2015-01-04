@@ -22,3 +22,4 @@
 - include: nvm.yml
 - include: c++.yml
 - include: golang.yml
+- include: php.yml

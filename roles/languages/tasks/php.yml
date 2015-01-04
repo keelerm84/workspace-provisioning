@@ -1,0 +1,17 @@
+- name: install php
+  yum: name=php state=present
+
+- name: check if composer is installed
+  stat: path=/home/keelerm/bin/composer.phar
+  register: st
+
+- name: install composer
+  shell: curl -sS https://getcomposer.org/installer | php -- --install-dir=/home/keelerm/bin
+  sudo_user: keelerm
+  sudo: yes
+  when: not st.stat.exists
+
+- name: update composer
+  shell: composer.phar self-update
+  sudo_user: keelerm
+  sudo: yes
