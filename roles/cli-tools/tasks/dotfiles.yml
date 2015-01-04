@@ -4,7 +4,7 @@
   sudo: yes
 
 - name: install dotfiles for {{ user }}
-  git: repo=git://github.com/keelerm84/dotfiles.git dest={{ home }}/.homesick/repos/dotfiles accept_hostkey=yes
+  git: repo=git://github.com/keelerm84/dotfiles.git dest={{ home }}/.homesick/repos/dotfiles accept_hostkey=yes update=yes
   sudo_user: "{{ user }}"
   sudo: yes
 

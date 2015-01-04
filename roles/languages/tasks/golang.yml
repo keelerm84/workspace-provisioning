@@ -1,0 +1,39 @@
+- name: test if golang is installed
+  command: "[ -e /usr/local/go/bin/go ]"
+  register: result
+  ignore_errors: yes
+
+- name: download golang source
+  command: wget https://storage.googleapis.com/golang/go1.4.linux-amd64.tar.gz
+  args:
+    chdir: /tmp
+  when: result|failed
+
+- name: extract source to golang directory
+  unarchive: src=/tmp/go1.4.linux-amd64.tar.gz dest=/usr/local copy=no
+  when: result|failed
+
+- name: remove golang source
+  file: path=/tmp/go1.4.linux-amd64.tar.gz state=absent
+
+- name: create golang workspace
+  file: path=/home/keelerm/Projects/golang/{{ item }} owner=keelerm group=keelerm mode=755 state=directory recurse=yes
+  sudo_user: keelerm
+  sudo: yes
+  with_items:
+    - bin
+    - pkg
+    - src/github.com/keelerm84
+
+- name: install godef
+  shell: GOPATH=/home/keelerm/Projects/golang /usr/local/go/bin/go get code.google.com/p/rog-go/exp/cmd/godef
+  sudo_user: keelerm
+  sudo: yes
+
+- name: install golang packages
+  shell: GOPATH=/home/keelerm/Projects/golang /usr/local/go/bin/go get -u {{ item }} > /tmp/error2 2>&1
+  with_items:
+    - github.com/nsf/gocode
+    - github.com/dougm/goflymake
+  sudo_user: keelerm
+  sudo: yes

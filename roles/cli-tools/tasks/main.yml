@@ -3,6 +3,9 @@
 - name: install git
   yum: name=git state=present
 
+- name: install hg
+  yum: name=hg state=present
+
 - name: install tmux
   yum: name=tmux state=present
 

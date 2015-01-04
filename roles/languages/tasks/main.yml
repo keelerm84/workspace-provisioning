@@ -21,3 +21,4 @@
 - include: latex.yml
 - include: nvm.yml
 - include: c++.yml
+- include: golang.yml
