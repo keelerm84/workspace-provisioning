@@ -3,5 +3,8 @@
 - name: create keelerm account
   user: name=keelerm comment="Matthew M. Keeler" shell=/usr/bin/zsh group=keelerm groups=wheel
 
+- name: create /home/keelerm/bin directory
+  file: path=/home/keelerm/bin owner=keelerm group=keelerm mode=700 state=directory
+
 - name: set root zsh
   user: name=root shell=/usr/bin/zsh

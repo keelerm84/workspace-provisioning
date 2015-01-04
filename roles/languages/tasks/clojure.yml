@@ -1,5 +1,3 @@
-- name: create /home/keelerm/bin directory
-  file: path=/home/keelerm/bin owner=keelerm group=keelerm mode=700 state=directory
 
 - name: fetch leiningen installation script
   command: wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein chdir=/home/keelerm/bin/
