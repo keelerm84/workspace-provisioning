@@ -3,6 +3,8 @@
 
 - name: tweak gsetting font options
   command: gsettings set org.gnome.settings-daemon.plugins.xsettings {{ item.key }} '{{ item.value }}'
+  sudo_user: keelerm
+  sudo: yes
   with_items:
     - { key: hinting, value: slight }
     - { key: antialiasing, value: rgba }
