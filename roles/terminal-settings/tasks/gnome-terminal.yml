@@ -29,6 +29,11 @@
   sudo_user: keelerm
   sudo: yes
 
+- name: enable run commands as login-shell
+  command: dconf write /org/gnome/terminal/legacy/profiles:/:{{ profile.stdout }}/login-shell "true"
+  sudo_user: keelerm
+  sudo: yes
+
 - name: new terminals should open in tabs
   command: dconf write /org/gnome/terminal/legacy/new-terminal-mode "'tab'"
   sudo_user: keelerm
