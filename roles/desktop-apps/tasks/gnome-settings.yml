@@ -1,0 +1,17 @@
+- name: focus should follow the mouse
+  command: gsettings set org.gnome.desktop.wm.preferences focus-mode 'mouse'
+  sudo_user: keelerm
+  sudo: yes
+
+- name: workspaces should exist on all desktops
+  command: gsettings set org.gnome.shell.overrides workspaces-only-on-primary false
+  sudo_user: keelerm
+  sudo: yes
+
+- name: tweak gsetting font options
+  command: gsettings set org.gnome.settings-daemon.plugins.xsettings {{ item.key }} '{{ item.value }}'
+  sudo_user: keelerm
+  sudo: yes
+  with_items:
+    - { key: hinting, value: slight }
+    - { key: antialiasing, value: rgba }

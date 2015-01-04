@@ -2,6 +2,7 @@
 # tasks file for desktop-apps
 - include: google-chrome.yml
 - include: fonts.yml
+- include: gnome-settings.yml
 
 - name: install various desktop applications
   yum: name={{ item }} state=present
@@ -11,8 +12,3 @@
     - dia
     - pencil
     - gnome-tweak-tool
-
-- name: focus should follow the mouse
-  command: gsettings set org.gnome.desktop.wm.preferences focus-mode 'mouse'
-  sudo_user: keelerm
-  sudo: yes
