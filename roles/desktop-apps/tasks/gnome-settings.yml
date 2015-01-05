@@ -15,3 +15,13 @@
   with_items:
     - { key: hinting, value: slight }
     - { key: antialiasing, value: rgba }
+
+- name: show time in panel using 12h format
+  command: gsettings set org.gnome.desktop.interface clock-format '12h'
+  sudo_user: keelerm
+  sudo: yes
+
+- name: show date in panel
+  command: gsettings set org.gnome.desktop.interface clock-show-date true
+  sudo_user: keelerm
+  sudo: yes
