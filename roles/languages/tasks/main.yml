@@ -1,7 +1,7 @@
 ---
 # tasks file for languages
 - name: create directories to store all projects
-  file: path=/home/keelerm/Projects/{{ item }} owner=keelerm group=keelerm mode=700 recurse=yes state=directory
+  file: path=/home/keelerm/Projects/{{ item }} owner=keelerm group=keelerm mode=700 state=directory
   with_items:
     - android
     - c
@@ -23,3 +23,4 @@
 - include: c++.yml
 - include: golang.yml
 - include: php.yml
+- include: python.yml
