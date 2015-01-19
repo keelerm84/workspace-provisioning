@@ -25,3 +25,8 @@
   command: gsettings set org.gnome.desktop.interface clock-show-date true
   sudo_user: keelerm
   sudo: yes
+
+- name: disable alt-space keybinding to activate window menu
+  command: gsettings set org.gnome.desktop.wm.keybindings activate-window-menu '[]'
+  sudo_user: keelerm
+  sudo: yes
