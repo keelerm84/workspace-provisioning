@@ -30,6 +30,11 @@
   sudo_user: keelerm
   sudo: yes
 
+- name: install goimports
+  shell: GOPATH=/home/keelerm/Projects/golang /usr/local/go/bin/go get golang.org/x/tools/cmd/goimports
+  sudo_user: keelerm
+  sudo: yes
+
 - name: install golang packages
   shell: GOPATH=/home/keelerm/Projects/golang /usr/local/go/bin/go get -u {{ item }} > /tmp/error2 2>&1
   with_items:
