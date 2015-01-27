@@ -18,6 +18,12 @@
 - name: install python-markdown2
   yum: name=python-markdown2 state=present
 
+- name: install ack
+  yum: name=ack state=present
+
+- name: install ag
+  yum: name=the_silver_searcher state=present
+
 - { include: emacs.yml, home: /home/keelerm/, user: keelerm }
 - { include: emacs.yml, home: /root/, user: root }
 
