@@ -1,6 +1,9 @@
 - name: install vim
   yum: name=vim-enhanced state=present
 
+- name: install ctags
+  yum: name=ctags state=present
+
 - name: create .vim/bundle directory for {{ user }}
   file: path={{ home }}/.vim/bundle owner={{ user }} group={{ user }} state=directory
   sudo_user: "{{ user }}"
