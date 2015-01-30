@@ -3,6 +3,7 @@
 - include: google-chrome.yml
 - include: fonts.yml
 - include: gnome-settings.yml
+- include: music.yml
 
 - name: install various desktop applications
   yum: name={{ item }} state=present
