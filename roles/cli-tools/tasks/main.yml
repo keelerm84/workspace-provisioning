@@ -35,3 +35,5 @@
 
 - { include: ssh.yml, home: /home/keelerm/, user: keelerm }
 - { include: ssh.yml, home: /root/, user: root }
+
+- { include: exercism.yml, home: /home/keelerm/, user: keelerm }

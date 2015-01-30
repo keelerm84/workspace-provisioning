@@ -1,0 +1,40 @@
+- include_vars: exercism.yml
+
+- name: check if exercism is installed for {{ user }}
+  stat: path={{ home }}/bin/exercism
+  sudo_user: "{{ user }}"
+  sudo: yes
+  register: st
+
+- name: download exercism install script for {{ user }}
+  shell: curl -O http://cli.exercism.io/install
+  sudo_user: "{{ user }}"
+  sudo: yes
+  when: not st.stat.exists
+  args:
+    chdir: "{{ home }}"
+
+- name: set permissions on exercism installation script for {{ user }}
+  file: path={{ home }}/install mode=755 owner={{ user }} group={{ user }} state=file
+  sudo_user: "{{ user }}"
+  sudo: yes
+  when: not st.stat.exists
+
+- name: run exercism installation script for {{ user }}
+  shell: "{{ home }}/install"
+  sudo_user: "{{ user }}"
+  sudo: yes
+  when: not st.stat.exists
+
+- name: cleanup exercism installation script for {{ user }}
+  file: path={{ home }}/install state=absent
+  sudo_user: "{{ user }}"
+  sudo: yes
+
+- name: create exercism project directory for {{ user }}
+  file: path=/home/keelerm/Projects/exercism owner=keelerm group=keelerm mode=700 state=directory
+
+- name: set exercism user configuration for {{ user }}
+  shell: echo '{{ config }}' > {{ home }}/.exercism.json
+  sudo_user: "{{ user }}"
+  sudo: yes
