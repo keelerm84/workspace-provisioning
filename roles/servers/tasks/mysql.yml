@@ -1,5 +1,14 @@
+- name: create mysql group
+  group: name=mysql state=present
+
+- name: create mysql user account
+  user: name=mysql comment='MySQL Server' group=mysql shell=/sbin/nologin home=/var/lib/mysql
+
 - name: create the log directory
   file: path=/var/log/ owner=root group=root mode=755 state=directory
 
 - name: create the mysql log file
   file: path=/var/log/mysql.log owner=mysql group=mysql mode=755 state=touch
+
+- name: create the mysqld log file
+  file: path=/var/log/mysqld.log owner=mysql group=mysql mode=755 state=touch
