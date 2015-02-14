@@ -1,2 +1,5 @@
 ---
 - include: mysql.yml
+
+- name: install postgresql development packages
+  yum: name=postgresql-devel state=present
