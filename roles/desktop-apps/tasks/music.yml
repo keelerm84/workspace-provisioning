@@ -27,7 +27,6 @@
 - name: install preferred players
   yum: name={{ item }} state=present
   with_items:
-    - banshee
     - cmus
     - xmms
 
