@@ -3,7 +3,6 @@
 - name: create directories to store all projects
   file: path=/home/keelerm/Projects/{{ item }} owner=keelerm group=keelerm mode=700 state=directory
   with_items:
-    - android
     - c
     - clojure
     - csharp
@@ -16,11 +15,11 @@
     - python
     - ruby
 
-- include: csharp.yml
+- include: c++.yml
 - include: clojure.yml
+- include: csharp.yml
+- include: golang.yml
 - include: latex.yml
 - include: nvm.yml
-- include: c++.yml
-- include: golang.yml
 - include: php.yml
 - include: python.yml
