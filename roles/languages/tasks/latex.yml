@@ -9,3 +9,6 @@
 
 - name: install texliv-ulem
   yum: name=texlive-ulem state=present
+
+- name: install latexdiff
+  yum: name=texlive-latexdiff state=present
