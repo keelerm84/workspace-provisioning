@@ -15,3 +15,11 @@
   shell: composer.phar self-update
   sudo_user: keelerm
   sudo: yes
+
+- name: install various php extensions
+  yum: name={{ item }} state=present
+  with_items:
+      - php-pdo
+      - php-symfony-icu
+      - php-mbstring
+      - php-mysql
