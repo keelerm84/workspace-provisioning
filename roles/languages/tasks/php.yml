@@ -19,7 +19,7 @@
 - name: install various php extensions
   yum: name={{ item }} state=present
   with_items:
-      - php-pdo
-      - php-symfony-icu
-      - php-mbstring
-      - php-mysql
+    - php-pdo
+    - php-symfony-icu
+    - php-mbstring
+    - php-mysql
