@@ -1,14 +1,10 @@
-- name: install texlive
-  yum: name=texlive state=present
-
-- name: install texlive-minted
-  yum: name=texlive-minted state=present
-
-- name: install texliv-wrapfig
-  yum: name=texlive-wrapfig state=present
-
-- name: install texliv-ulem
-  yum: name=texlive-ulem state=present
-
-- name: install latexdiff
-  yum: name=texlive-latexdiff state=present
+- name: install various LaTeX packages
+  yum: name={{ item }} state=present
+  with_items:
+    - texlive
+    - texlive-minted
+    - texlive-wrapfig
+    - texlive-ulem
+    - texlive-latexdiff
+    - texlive-lastpage
+    - texlive-invoice
