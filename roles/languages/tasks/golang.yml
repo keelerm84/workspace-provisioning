@@ -40,5 +40,7 @@
   with_items:
     - github.com/nsf/gocode
     - github.com/dougm/goflymake
+    - code.google.com/p/gcfg
+    - github.com/codegangsta/cli
   sudo_user: keelerm
   sudo: yes
