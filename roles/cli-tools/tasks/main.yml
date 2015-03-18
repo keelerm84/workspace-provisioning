@@ -24,6 +24,9 @@
 - name: install ag
   yum: name=the_silver_searcher state=present
 
+- name: install nmap
+  yum: name=nmap state=present
+
 - { include: emacs.yml, home: /home/keelerm/, user: keelerm }
 - { include: emacs.yml, home: /root/, user: root }
 
