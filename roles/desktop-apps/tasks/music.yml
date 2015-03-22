@@ -29,4 +29,5 @@
   with_items:
     - cmus
     - xmms
+    - vlc
 
