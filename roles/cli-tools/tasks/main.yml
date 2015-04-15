@@ -30,6 +30,9 @@
 - name: install weechat
   yum: name=weechat state=present
 
+- name: install youtube-dl
+  yum: name=youtube-dl state=present
+
 - { include: emacs.yml, home: /home/keelerm/, user: keelerm }
 - { include: emacs.yml, home: /root/, user: root }
 
