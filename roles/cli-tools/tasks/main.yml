@@ -36,6 +36,9 @@
 - name: install vagrant
   yum: name=vagrant state=present
 
+- name: install vagrant-libvirt
+  yum: name=vagrant-libvirt state=present
+
 - { include: emacs.yml, home: /home/keelerm/, user: keelerm }
 - { include: emacs.yml, home: /root/, user: root }
 
