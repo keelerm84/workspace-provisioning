@@ -33,6 +33,9 @@
 - name: install youtube-dl
   yum: name=youtube-dl state=present
 
+- name: install vagrant
+  yum: name=vagrant state=present
+
 - { include: emacs.yml, home: /home/keelerm/, user: keelerm }
 - { include: emacs.yml, home: /root/, user: root }
 
