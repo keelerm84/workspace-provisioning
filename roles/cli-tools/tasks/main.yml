@@ -42,6 +42,9 @@
 - name: install virtualbox
   yum: name=VirtualBox state=present
 
+- name: install docker
+  yum: name=docker state=present
+
 - { include: emacs.yml, home: /home/keelerm/, user: keelerm }
 - { include: emacs.yml, home: /root/, user: root }
 
