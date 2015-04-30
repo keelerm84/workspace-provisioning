@@ -31,3 +31,8 @@
     - xmms
     - vlc
 
+- name: enable spotify repo
+  copy: src=fedora-spotify.repo dest=/etc/yum.repos.d/fedora-spotify.repo
+
+- name: install spotify-client
+  yum: name=spotify-client state=present
