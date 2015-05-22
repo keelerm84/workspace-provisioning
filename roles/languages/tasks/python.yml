@@ -1,2 +1,8 @@
 - name: install virtualenv
   command: pip install virtualenv
+
+- name: install various supporting packages
+  yum: name={{ item }} state=present
+  with_items:
+    - python-qt4
+    - python3-qt4
