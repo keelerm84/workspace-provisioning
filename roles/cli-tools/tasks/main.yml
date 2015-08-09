@@ -45,6 +45,9 @@
 - name: install docker
   yum: name=docker state=present
 
+- name: install docker-compose
+  command: pip install docker-compose
+
 - name: install poppler
   yum: name=poppler state=present
 
