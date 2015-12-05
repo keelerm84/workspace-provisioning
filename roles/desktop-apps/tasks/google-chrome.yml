@@ -1,5 +1,8 @@
 - name: enable google chrome repo
-  copy: src=google-chrome.repo dest=/etc/yum.repos.d/google-chrome.repo
+  command: dnf config-manager --add-repo http://dl.google.com/linux/chrome/rpm/stable/x86_64
+
+- name: install google pgp key
+  command: rpm --import https://dl-ssl.google.com/linux/linux_signing_key.pub
 
 - name: install google chrome
-  yum: name=google-chrome-stable state=present
+  dnf: name=google-chrome-stable state=present

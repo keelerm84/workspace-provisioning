@@ -1,55 +1,46 @@
 ---
 # tasks file for cli-tools
 - name: install git
-  yum: name=git state=present
+  dnf: name=git state=present
 
 - name: install hg
-  yum: name=hg state=present
+  dnf: name=hg state=present
 
 - name: install tmux
-  yum: name=tmux state=present
+  dnf: name=tmux state=present
 
 - name: install zsh
-  yum: name=zsh state=present
+  dnf: name=zsh state=present
 
 - name: install sqlite-devel
-  yum: name=sqlite-devel state=present
+  dnf: name=sqlite-devel state=present
 
 - name: install python-markdown2
-  yum: name=python-markdown2 state=present
+  dnf: name=python-markdown2 state=present
 
 - name: install ack
-  yum: name=ack state=present
+  dnf: name=ack state=present
 
 - name: install ag
-  yum: name=the_silver_searcher state=present
+  dnf: name=the_silver_searcher state=present
 
 - name: install nmap
-  yum: name=nmap state=present
+  dnf: name=nmap state=present
 
 - name: install weechat
-  yum: name=weechat state=present
+  dnf: name=weechat state=present
 
 - name: install youtube-dl
-  yum: name=youtube-dl state=present
-
-- name: install vagrant
-  yum: name=vagrant state=present
-
-- name: install vagrant-libvirt
-  yum: name=vagrant-libvirt state=present
-
-- name: install virtualbox
-  yum: name=VirtualBox state=present
+  dnf: name=youtube-dl state=present
 
 - name: install docker
-  yum: name=docker state=present
+  dnf: name=docker state=present
 
 - name: install docker-compose
   command: pip install docker-compose
 
 - name: install poppler
-  yum: name=poppler state=present
+  dnf: name=poppler state=present
 
 - { include: emacs.yml, home: /home/keelerm/, user: keelerm }
 - { include: emacs.yml, home: /root/, user: root }

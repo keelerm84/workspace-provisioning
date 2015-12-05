@@ -1,5 +1,5 @@
 - name: install various LaTeX packages
-  yum: name={{ item }} state=present
+  dnf: name={{ item }} state=present
   with_items:
     - texlive
     - texlive-minted

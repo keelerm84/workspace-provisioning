@@ -1,2 +1,2 @@
 - name: add ghc
-  yum: name=ghc state=present
+  dnf: name=ghc state=present

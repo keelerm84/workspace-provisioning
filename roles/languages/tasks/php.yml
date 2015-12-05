@@ -1,5 +1,5 @@
 - name: install php
-  yum: name=php state=present
+  dnf: name=php state=present
 
 - name: check if composer is installed
   stat: path=/home/keelerm/bin/composer.phar

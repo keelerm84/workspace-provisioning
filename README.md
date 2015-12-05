@@ -8,7 +8,7 @@ various servers that I work on.
 In order to use this repository, you can first must have ansible
 installed.
 
-    yum install -y python-pip gcc python-devel git
+    dnf install -y python-pip gcc python-devel git
     pip install ansible
 
 Once this is installed, you can install the third-party ansible roles

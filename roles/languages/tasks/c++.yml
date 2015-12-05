@@ -1,9 +1,9 @@
 - name: install qt packages
-  yum: name={{ item }} state=present
+  dnf: name={{ item }} state=present
   with_items:
     - qt
     - qt-devel
     - qt-creator
 
 - name: install cmake
-  yum: name=cmake state=present
+  dnf: name=cmake state=present

@@ -1,11 +1,11 @@
 - name: install non-free repositories to support mp3 codec
-  yum: name={{ item }} state=present
+  dnf: name={{ item }} state=present
   with_items:
     - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-21.noarch.rpm
     - http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-21.noarch.rpm
 
 - name: install packages for mp3 codecs
-  yum: name={{ item }} state=present
+  dnf: name={{ item }} state=present
   with_items:
     - gstreamer-plugins-bad
     - gstreamer-plugins-bad-free-extras
@@ -25,10 +25,8 @@
     - lame-libs
 
 - name: install preferred players
-  yum: name={{ item }} state=present
+  dnf: name={{ item }} state=present
   with_items:
-    - cmus
-    - xmms
     - vlc
 
 - name: enable spotify repo
