@@ -17,7 +17,6 @@
 
 - include: c++.yml
 - include: clojure.yml
-- include: csharp.yml
 - include: golang.yml
 - include: haskell.yml
 - include: latex.yml

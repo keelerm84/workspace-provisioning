@@ -15,15 +15,6 @@
     - { role: cli-tools, tags: ['cli'] }
     - { role: languages, tags: ['languages'] }
     - { role: rvm_io.rvm1-ruby, tags: ['languages'], sudo_user: keelerm, sudo: true }
-    - { role: servers, tags: ['servers', 'mysql'], }
-    - { role: bennojoy.mysql,
-        mysql_root_db_pass: "{{ mysql_root_pass }}",
-        mysql_db: [],
-        mysql_service: mariadb,
-        mysql_users: [],
-        mysql_bind_address: "localhost",
-        tags: ['mysql']
-      }
 
   tasks:
     - name: reset rvm
