@@ -42,16 +42,47 @@
 - name: install poppler
   dnf: name=poppler state=present
 
-- { include: emacs.yml, home: /home/keelerm/, user: keelerm }
-- { include: emacs.yml, home: /root/, user: root }
+- include: emacs.yml
+  args:
+    home: /home/keelerm/
+    user: keelerm
 
-- { include: dotfiles.yml, home: /home/keelerm/, user: keelerm }
-- { include: vim.yml, home: /home/keelerm/, user: keelerm }
+- include: emacs.yml
+  args:
+    home: /root/
+    user: root
 
-- { include: dotfiles.yml, home: /root, user: root }
-- { include: vim.yml, home: /root/, user: root }
+- include: dotfiles.yml
+  args:
+    home: /home/keelerm/
+    user: keelerm
 
-- { include: ssh.yml, home: /home/keelerm/, user: keelerm }
-- { include: ssh.yml, home: /root/, user: root }
+- include: vim.yml
+  args:
+    home: /home/keelerm/
+    user: keelerm
 
-- { include: exercism.yml, home: /home/keelerm/, user: keelerm }
+- include: dotfiles.yml
+  args:
+    home: /root
+    user: root
+
+- include: vim.yml
+  args:
+    home: /root/
+    user: root
+
+- include: ssh.yml
+  args:
+    home: /home/keelerm/
+    user: keelerm
+
+- include: ssh.yml
+  args:
+    home: /root/
+    user: root
+
+- include: exercism.yml
+  args:
+    home: /home/keelerm/
+    user: keelerm
